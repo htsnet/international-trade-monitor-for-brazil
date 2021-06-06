@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import streamlit.components.v1 as components
 
 
     #lista de emotivons
@@ -54,8 +55,10 @@ def main():
     c = alt.Chart(grupoValor).mark_circle().encode(
         x='Descrição CGCE Nível 1', y='Valor FOB (US$)')
     col2.altair_chart(c, use_container_width=True)
+    
 
-
+    components.html("""<hr style="height:5px;border:none;color:#333;background-color:#333;" /> """)
+    st.write("Git: https://github.com/htsnet/international-trade-monitor-for-brazil")
 
 if __name__ == '__main__':
 	main() 
