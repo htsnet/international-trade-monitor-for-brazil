@@ -2,15 +2,11 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import streamlit.components.v1 as components
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.preprocessing import Normalizer
-from sklearn import preprocessing
-import matplotlib.pyplot as plt
 
 
-    #lista de emotivons
-    # https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json
-st.set_page_config(page_title='Grupo de Python - Visualização de dados', page_icon=':moneybag', layout='centered', )
+#lista de emotivons
+# https://raw.githubusercontent.com/omnidan/node-emoji/master/lib/emoji.json
+st.set_page_config(page_title='Grupo de Python - Visualização de dados', page_icon=':moneybag', layout='wide', )
 
 #pega o dataset completo
 data = pd.read_csv('data.csv', sep=";", quotechar='"', dtype='unicode')
@@ -104,10 +100,6 @@ def main():
     anoValor.drop('Valor FOB (US$)', inplace=True, axis='columns')
     anoValor.set_index('Ano', inplace = True)
     st.line_chart(anoValor)
-
-    
-
-
 
     components.html("""<hr style="height:5px;border:none;color:#333;background-color:#333;" /> """)
     st.write("Git: https://github.com/htsnet/international-trade-monitor-for-brazil")
