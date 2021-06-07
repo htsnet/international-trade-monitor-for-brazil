@@ -86,7 +86,7 @@ def main():
     col2.altair_chart(c, use_container_width=True)
 
 
-    st.subheader('Comparing Brazil with one state (data normalized)')
+    st.subheader('Comparing Brazil with one state (normalized data)')
     # fazendo comparação entre o global e um estado
     # pega o maior valor do geral
     max = anoValor['Valor FOB (US$)'].max()
